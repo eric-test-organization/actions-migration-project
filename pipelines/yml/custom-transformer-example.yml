@@ -19,12 +19,12 @@ jobs:
         inputs:
           command: restore
           projects: "$(BuildParameters.RESTOREBUILDPROJECTS)"  
-     - task: SSISCatalog@0
-       displayName: Configure SSIS Catalog
-       inputs:
-         configPath: azure-pipelines-1.yml
-         targetServer: foo
-         authType: win
+      - task: SSISCatalog@0
+        displayName: Configure SSIS Catalog
+        inputs:
+          configPath: azure-pipelines-1.yml
+          targetServer: foo
+          authType: win
       - task: DotNetCoreCLI@2
         displayName: Build
         inputs:
